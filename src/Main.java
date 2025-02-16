@@ -1,9 +1,12 @@
+import java.io.FileReader;
 import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
 
 public class Main {
     public static void main (String[] args) {
-
-        help();
+        fileReader("help.txt");
+        //help(); //replaced with fileReader method
 
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -20,7 +23,7 @@ public class Main {
         System.out.println(">seeYouLater<");
     }
 
-    private static void help() {
+ /*   private static void help() {          //replaced with fileReader method
         System.out.println("""
                 Hello. The next features are implemented:
                     \
@@ -35,6 +38,7 @@ public class Main {
                 type 'exit' to quit
                 """);
     }
+ */
 
     private static void inputParser(String input) {
         if (isNumber(input)){
@@ -79,14 +83,15 @@ public class Main {
         if (input.equals("John")) {
             System.out.println("Hello John!");
         } else if (input.equals("bracket")) {
-            System.out.println("""
+            fileReader("bracket.txt");
+      /*      System.out.println("""
             Given bracket sequence: [((())()(())]]
             A bracket sequence is considered correct
             if every opening bracket has a corresponding closing bracket
             There are 2 options to correct brackets:
             Option 1: [(( ))( )(( ))] //removed excess
             Option 2: [[( (( ))( )(( )) )]] //added absence
-            """);
+            """); */
         } else {
             System.out.println("There is no such name or command");
         }
@@ -105,4 +110,15 @@ public class Main {
             System.out.println("There are no array elements that are multiples of 3");
         }
     } //done
+
+    private static void fileReader(String filePath) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            System.err.println("file reading error: " + e.getMessage());
+        }
+    }
 }

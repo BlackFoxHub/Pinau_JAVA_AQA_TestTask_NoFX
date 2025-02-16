@@ -1,0 +1,6 @@
+Given bracket sequence: [((())()(())]]
+A bracket sequence is considered correct
+if every opening bracket has a corresponding closing bracket
+There are 2 options to correct brackets:
+Option 1: [(( ))( )(( ))] //removed excess
+Option 2: [[( (( ))( )(( )) )]] //added absence
