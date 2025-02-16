@@ -17,16 +17,23 @@ public class Main {
         }
         scanner.close();
 
-        System.out.println("seeYouLater"); //check
+        System.out.println(">seeYouLater<");
     }
 
     private static void help() {
-        System.out.println("Hello. The next features are implemented:");
-        System.out.println("    'greater than 7' answer (int range)");
-        System.out.println("    array of int numbers including multiples of 3");
-        System.out.println("    John greetings\n");
-        System.out.println("type 'bracket' to get answer about bracket issue\n");
-        System.out.println("type 'exit' to quit\n");
+        System.out.println("""
+                Hello. The next features are implemented:
+                    \
+                'greater than 7' answer (int range)
+                    \
+                array of int numbers including multiples of 3
+                    \
+                John greetings
+                
+                type 'bracket' to get answer about bracket issue
+                
+                type 'exit' to quit
+                """);
     }
 
     private static void inputParser(String input) {
@@ -36,7 +43,7 @@ public class Main {
             multipl(input);
         }
         else {
-            john(input);
+            commands(input);
         }
     } //done
 
@@ -68,17 +75,20 @@ public class Main {
 
     } //done
 
-    private static void john(String input) {
+    private static void commands(String input) {
         if (input.equals("John")) {
             System.out.println("Hello John!");
         } else if (input.equals("bracket")) {
-            System.out.println("Given bracket sequence: [((())()(())]]");
-            System.out.println("A bracket sequence is considered correct\nif every opening bracket has a corresponding closing bracket");
-            System.out.println("There are 2 options to correct brackets");
-            System.out.println("Option 1: [(( ))( )(( ))] //removed excess");
-            System.out.println("Option 2: [[( (( ))( )(( )) )]] //added absence");
+            System.out.println("""
+            Given bracket sequence: [((())()(())]]
+            A bracket sequence is considered correct
+            if every opening bracket has a corresponding closing bracket
+            There are 2 options to correct brackets:
+            Option 1: [(( ))( )(( ))] //removed excess
+            Option 2: [[( (( ))( )(( )) )]] //added absence
+            """);
         } else {
-            System.out.println("There is no such name");
+            System.out.println("There is no such name or command");
         }
     } //done
 
@@ -92,7 +102,7 @@ public class Main {
             }
         }
         if (prccesd % 3 != 0) {
-            System.out.println("no 333");
+            System.out.println("There are no array elements that are multiples of 3");
         }
     } //done
 }
