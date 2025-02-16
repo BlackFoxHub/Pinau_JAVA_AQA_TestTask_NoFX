@@ -1,0 +1,9 @@
+Hello. The next features are implemented:
+    1. 'greater than 7' answer (int range)
+    2. array of int numbers including multiples of 3
+    3. John greetings
+    4*. multiline text messages moved to files
+
+type 'bracket' to get answer about bracket issue
+
+type 'exit' to quit
