@@ -17,15 +17,23 @@ public class Main {
         }
         scanner.close();
 
-        System.out.println("seeYouLater");
+        System.out.println(">seeYouLater<");
     }
 
     private static void help() {
-        System.out.println("Hello. The next features are implemented:\n    " +
-                "'greater than 7' answer (int range)\n    " +
-                "array of int numbers including multiples of 3\n    " +
-                "John greetings\n\ntype 'bracket' to get answer about bracket issue\n\n" +
-                "type 'exit' to quit\n");
+        System.out.println("""
+                Hello. The next features are implemented:
+                    \
+                'greater than 7' answer (int range)
+                    \
+                array of int numbers including multiples of 3
+                    \
+                John greetings
+                
+                type 'bracket' to get answer about bracket issue
+                
+                type 'exit' to quit
+                """);
     }
 
     private static void inputParser(String input) {
@@ -71,11 +79,14 @@ public class Main {
         if (input.equals("John")) {
             System.out.println("Hello John!");
         } else if (input.equals("bracket")) {
-            System.out.println("Given bracket sequence: [((())()(())]]\n" +
-            "A bracket sequence is considered correct\nif every opening bracket has a corresponding closing bracket\n" +
-            "There are 2 options to correct brackets\n" +
-            "Option 1: [(( ))( )(( ))] //removed excess\n" +
-            "Option 2: [[( (( ))( )(( )) )]] //added absence");
+            System.out.println("""
+            Given bracket sequence: [((())()(())]]
+            A bracket sequence is considered correct
+            if every opening bracket has a corresponding closing bracket
+            There are 2 options to correct brackets:
+            Option 1: [(( ))( )(( ))] //removed excess
+            Option 2: [[( (( ))( )(( )) )]] //added absence
+            """);
         } else {
             System.out.println("There is no such name or command");
         }
